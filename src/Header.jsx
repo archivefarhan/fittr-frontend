@@ -1,3 +1,5 @@
+import { LogoutLink } from "./LogoutLink";
+
 export function Header() {
   return (
     <header aria-label="Site Header" class="bg-white">
@@ -33,18 +35,20 @@ export function Header() {
           <div class="flex items-center gap-4">
             <div class="sm:flex sm:gap-4">
               <a
-                class="block rounded-md bg-black px-5 py-2.5 text-sm font-medium text-white transition hover:bg-gray-500"
+                className="block rounded-md bg-black px-5 py-2.5 text-sm font-medium text-white transition hover:bg-gray-500"
                 href="/login"
               >
                 Login
               </a>
 
               <a
-                class="block rounded-md bg-black px-5 py-2.5 text-sm font-medium text-white transition hover:bg-gray-500"
+                className="block rounded-md bg-black px-5 py-2.5 text-sm font-medium text-white transition hover:bg-gray-500"
                 href="/signup"
               >
                 Signup
               </a>
+
+              <LogoutLink />
             </div>
           </div>
         </div>
