@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 export function Closet() {
-  const [items, setItems] = useState({});
-  const [categories, setCategories] = useState({});
+  const [items, setItems] = useState([]);
+  const [categories, setCategories] = useState([]);
 
   const handleIndexItems = () => {
     axios.get("http://localhost:3000/items.json").then((response) => {
@@ -24,27 +24,35 @@ export function Closet() {
   useEffect(handleIndexCategories, []);
 
   return (
-    <div className="text-center">
-      <p>Category</p>
-      <br />
-      {/* Tops = categories_id 1 */}
-      <p>{categories[0].name}</p>
-      <br />
-      {/* Bottoms = categories_id 2 */}
-      <p>{categories[1].name}</p>
-      <br />
-      {/* Outterwear = categories_id 3 */}
-      <p>{categories[2].name}</p>
-      <br />
-      {/* Footwear = categories_id 4 */}
-      <p>{categories[3].name}</p>
-      <br />
-      {/* Tailoring = categories_id 5 */}
-      <p>{categories[4].name}</p>
-      <br />
-      {/* Accessories = categories_id 6 */}
-      <p>{categories[5].name}</p>
-      <br />
+    <div className="text-center w-screen h-auto">
+      <div>
+        <p className="text-4xl font-black">Categories</p>
+        <br />
+        {categories.map((category) => (
+          <div key={category.id} className="block">
+            <p className="text-2xl font-bold italic">{category.name}</p>
+            <br />
+            {category.items.map((item) => (
+              <div key={item.id} class="block">
+                <br />
+                <img
+                  src={item.img_url}
+                  class="h-56 w-auto mx-auto items-center rounded-bl-3xl rounded-tr-3xl object-cover sm:h-72"
+                />
+                <div class="mt-4 sm:flex sm:items-center sm:justify-center sm:gap-4">
+                  <strong class="font-medium">{item.name}</strong>
+
+                  <span class="hidden sm:block sm:h-px sm:w-8 sm:bg-black"></span>
+
+                  <p class="mt-0.5 opacity-50 sm:mt-0">{item.description}</p>
+                  <br />
+                </div>
+              </div>
+            ))}
+            <br />
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

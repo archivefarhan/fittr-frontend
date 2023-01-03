@@ -1,6 +1,6 @@
 export function Home() {
   return (
-    <div className="m-10 min-h-auto">
+    <div className="m-10 w-screen h-screen">
       <h1 className="text-2xl	text-center">Hello!</h1>
       <br />
       <p>
