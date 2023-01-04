@@ -24,9 +24,15 @@ export function Closet() {
   useEffect(handleIndexCategories, []);
 
   return (
-    <div className="text-center w-screen h-auto">
+    <div className="text-center w-screen h-auto grid grid-cols-2">
+      <div className="mt-10">
+        <p className="text-center text-4xl font-black">Outfit</p>
+        <p className="border border-black ml-5 mt-5 p-96"></p>
+        <button className="rounded-full bg-black text-white w-1/5 mt-2">Save</button>
+        <button className="rounded-full bg-black text-white w-1/5 ml-2 mt-2">Clear</button>
+      </div>
       <div>
-        <p className="text-4xl font-black">Categories</p>
+        <p className="mt-10 text-4xl font-black">Categories</p>
         <br />
         {categories.map((category) => (
           <div key={category.id} className="block">

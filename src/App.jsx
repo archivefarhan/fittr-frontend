@@ -7,6 +7,7 @@ import { About } from "./About";
 import { Closet } from "./Closet";
 import { Signup } from "./Signup";
 import { Login } from "./Login";
+import { Outfit } from "./Outfit";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/outfits" element={<Outfit />} />
           </Routes>
         </div>
         <Footer />

@@ -1,25 +1,32 @@
 export function About() {
   return (
-    <div>
-      <h1 className="text-2xl	text-center">About Page!</h1>
-      <br />
-      <p className="contents text-center">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, fugit molestiae! Porro quo, quis cum debitis
-        quasi quaerat nulla illo eius ducimus aut autem tempora expedita velit et incidunt nostrum magni perferendis
-        deserunt sequi ab quisquam quas animi cumque dicta. Vitae ut obcaecati nihil deserunt dolorum ipsa esse veniam
-        veritatis, adipisci provident blanditiis excepturi atque facilis sapiente sit voluptas repellat doloribus quam
-        sequi aut dicta perferendis officiis praesentium dolor! Quia facere asperiores optio, dolorum facilis ipsam,
-        dolores inventore nostrum modi quos necessitatibus placeat suscipit nobis aut eos cupiditate? Velit, a, rerum ab
-        cupiditate facilis quos amet placeat doloremque molestiae iste nostrum molestias nam. Ducimus inventore fugiat
-        impedit, libero quos odit rem neque maxime similique veniam dignissimos expedita voluptatibus at culpa magnam
-        qui esse consequatur iste. Doloremque aperiam repellat repudiandae asperiores numquam dolorum nihil illo ipsa
-        recusandae aut veniam atque eum, velit molestiae pariatur suscipit? Deleniti quia labore, ab, recusandae
-        consequuntur similique distinctio voluptatem natus expedita iure a, maxime facere libero dicta alias beatae
-        laboriosam maiores ratione animi odio aut! Distinctio, quisquam. Dolor ipsum sequi ea doloribus beatae facere
-        impedit, nobis qui nesciunt? Dolorum dicta sequi minima tenetur exercitationem voluptate modi esse. Beatae quas
-        eaque mollitia molestiae laboriosam totam assumenda ut?
-      </p>
-      <br />
+    <div className="h-screen">
+      <section>
+        <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+          <div class="max-w-3xl">
+            <h2 class="text-3xl font-bold sm:text-4xl">fittr</h2>
+          </div>
+
+          <div class="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
+            <div class="relative h-64 overflow-hidden sm:h-80 lg:h-full">
+              <img src="capstone.svg" class="absolute inset-0 h-full w-full object-contain" />
+            </div>
+
+            <div class="lg:py-16">
+              <article class="space-y-4 text-gray-600">
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut qui hic atque tenetur quis eius quos ea
+                  neque sunt, accusantium soluta minus veniam tempora deserunt? Molestiae eius quidem quam repellat.
+                  Ipsum dolor sit amet consectetur, adipisicing elit. Dolorum explicabo quidem voluptatum voluptas illo
+                  accusantium ipsam quis, vel mollitia? Vel provident culpa dignissimos possimus, perferendis
+                  consectetur odit accusantium dolorem amet voluptates aliquid, ducimus tempore incidunt quas. Veritatis
+                  molestias tempora distinctio voluptates sint! Itaque quasi corrupti, sequi quo odit illum impedit!
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

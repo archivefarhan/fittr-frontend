@@ -23,19 +23,21 @@ export function Signup() {
 
   return (
     <div id="signup" className="text-center w-screen h-screen">
-      <h1 className="text-center text-2xl	font-bold	">Signup</h1>
+      <br />
+      <h1 className="pl-2 text-center text-2xl	font-bold	">Signup</h1>
+      <br />
       <ul>
         {errors.map((error) => (
           <li key={error}>{error}</li>
         ))}
       </ul>
-      <form className="mt-8 pl-10 grid grid-cols-1 gap-6 place-content-center" onSubmit={handleSubmit}>
+      <form className="mt-8 pl-5 grid grid-cols-1 gap-6 place-content-center" onSubmit={handleSubmit}>
         <div>
           <input
             name="name"
             type="text"
             placeholder="Name"
-            className="pl-1 mt-1 w-1/2 rounded-md border-gray-200 bg-white text-center text-lg text-gray-700 shadow-sm shadow-black outline-black	"
+            className="pl-1 mt-1 w-2/5 rounded-md border-gray-200 bg-white text-center text-lg text-gray-700 shadow-sm shadow-black outline-black	"
           />
         </div>
         <div>
@@ -43,7 +45,7 @@ export function Signup() {
             name="email"
             type="email"
             placeholder="Email"
-            className="pl-1 mt-1 w-1/2 rounded-md border-gray-200 bg-white text-center text-lg text-gray-700 shadow-sm shadow-black outline-black	"
+            className="pl-1 mt-1 w-2/5 rounded-md border-gray-200 bg-white text-center text-lg text-gray-700 shadow-sm shadow-black outline-black	"
           />
         </div>
         <div>
@@ -51,7 +53,7 @@ export function Signup() {
             name="password"
             type="password"
             placeholder="Password"
-            className="pl-1 mt-1 w-1/2 rounded-md border-gray-200 bg-white text-center text-lg text-gray-700 shadow-sm shadow-black outline-black	"
+            className="pl-1 mt-1 w-2/5 rounded-md border-gray-200 bg-white text-center text-lg text-gray-700 shadow-sm shadow-black outline-black	"
           />
         </div>
         <div>
@@ -59,7 +61,7 @@ export function Signup() {
             name="password_confirmation"
             type="password"
             placeholder="Password confirmation"
-            className="pl-1 mt-1 w-1/2 rounded-md border-gray-200 bg-white text-center text-lg text-gray-700 shadow-sm shadow-black outline-black	"
+            className="pl-1 mt-1 w-2/5 rounded-md border-gray-200 bg-white text-center text-lg text-gray-700 shadow-sm shadow-black outline-black	"
           />
         </div>
         <div>
