@@ -32,7 +32,8 @@ export function Closet() {
 
   const handleCreateOutfit = (event) => {
     event.preventDefault();
-    const params = new FormData(event.target);
+    let params = new FormData(event.target);
+    params.append("outfit", JSON.stringify(outfit));
     axios
       .post("http://localhost:3000/outfits.json", params)
       .then((response) => {
@@ -51,7 +52,8 @@ export function Closet() {
     <div className="text-center w-screen h-auto grid grid-cols-2">
       <div className="mt-10">
         <p className="text-center ml-10 text-4xl font-black">Outfit</p>
-        <div className="border border-black ml-5 mt-5 w-150 h-150">
+        <div className="border border-black ml-5 mt-5 w-150 h-150 overflow-scroll max-h-screen">
+          <p className="italic underline">Add Items to Outfit</p>
           {outfit.map((item) => (
             <div>
               <img className="h-56 w-auto mx-auto" src={item.img_url} />

@@ -16,7 +16,7 @@ export function Outfit() {
   return (
     <div className="h-screen">
       <div className="mt-5  text-center block text-4xl font-black">Outfits</div>
-      <div className="grid grid-col2 justify-center items-center">
+      <div className="grid grid-row2 justify-center items-center">
         <br />
         <div className=" mt-5 block text-center">
           {outfits.map((outfit) => (
