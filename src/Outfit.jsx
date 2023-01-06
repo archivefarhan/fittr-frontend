@@ -23,6 +23,15 @@ export function Outfit() {
             <div key={outfit.id}>
               <br />
               <p>{outfit.name}</p>
+              <p>
+                {outfit.items.map((item) => (
+                  <div key={item.id}>
+                    <p>{item.name}</p>
+                    <img className="w-30 h-auto" src={item.img_url} />
+                    <p>{item.description}</p>
+                  </div>
+                ))}
+              </p>
             </div>
           ))}
         </div>
