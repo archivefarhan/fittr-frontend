@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 export function Items() {
@@ -25,7 +26,9 @@ export function Items() {
   return (
     <div className="text-center w-screen h-auto">
       <p className="mt-10 text-4xl font-black text-center">Items</p>
-      <button className="rounded-xl bg-black text-white w-24 text-center mt-10">Add Item</button>
+      <Link to="/items/new" className="rounded-sm bg-black text-white w-full text-center mt-10">
+        Add Item
+      </Link>
       <br />
       <div className="flex justify-between p-5">
         <br />

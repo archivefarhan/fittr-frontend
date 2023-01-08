@@ -3,11 +3,19 @@ import { useEffect, useState } from "react";
 
 export function Outfit() {
   const [outfits, setOutfits] = useState([]);
+  const [outfit, setOutfit] = useState([]);
 
   const handleIndexOutfits = () => {
     axios.get("http://localhost:3000/outfits.json").then((response) => {
       console.log(response.data);
       setOutfits(response.data);
+    });
+  };
+
+  const handleDestroyOutfit = (outfit) => {
+    console.log("handleDestroyOutfit", outfit);
+    axios.delete(`http://localhost:3000/outfits/${outfit.id}.json`).then((response) => {
+      setOutfits(outfits.filter((o) => o.id !== outfit.id));
     });
   };
 
@@ -32,7 +40,9 @@ export function Outfit() {
                 </p>
               </div>
               <button className="rounded-md bg-black text-white w-20 mt-2 ml-2">Edit</button>
-              <button className="rounded-md bg-black text-white w-20 mt-2 ml-2">Delete</button>
+              <button className="rounded-md bg-black text-white w-20 mt-2 ml-2" onClick={handleDestroyOutfit}>
+                Delete
+              </button>
             </div>
           ))}
         </div>

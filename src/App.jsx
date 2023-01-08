@@ -9,6 +9,8 @@ import { Signup } from "./Signup";
 import { Login } from "./Login";
 import { Outfit } from "./Outfit";
 import { Items } from "./Items";
+import { ItemShowPage } from "./ItemShowPage";
+import { ItemNew } from "./ItemNew";
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/outfits" element={<Outfit />} />
             <Route path="/items" element={<Items />} />
+            <Route path="/items/:id" element={<ItemShowPage />} />
+            <Route path="/items/new" element={<ItemNew />} />
           </Routes>
         </div>
         <Footer />

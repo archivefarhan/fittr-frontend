@@ -24,20 +24,20 @@ export function Signup() {
   return (
     <div id="signup" className="text-center w-screen h-screen">
       <br />
-      <h1 className="pl-2 text-center text-2xl	font-bold	">Signup</h1>
-      <br />
-      <ul>
-        {errors.map((error) => (
-          <li key={error}>{error}</li>
-        ))}
-      </ul>
-      <form className="mt-8 pl-5 grid grid-cols-1 gap-6 place-content-center" onSubmit={handleSubmit}>
+      <form className="h-1/2 flex flex-col items-center justify-center rounded" onSubmit={handleSubmit}>
+        <h1 className="pl-2 text-center text-2xl	font-bold	">Signup</h1>
+        <ul>
+          {errors.map((error) => (
+            <li key={error}>{error}</li>
+          ))}
+        </ul>
+        <br />
         <div>
           <input
             name="name"
             type="text"
             placeholder="Name"
-            className="pl-1 mt-1 w-2/5 rounded-md border-gray-200 bg-white text-center text-lg text-gray-700 shadow-sm shadow-black outline-black	"
+            className="rounded-xl border-gray-900 border mb-2 w-full text-md"
           />
         </div>
         <div>
@@ -45,7 +45,7 @@ export function Signup() {
             name="email"
             type="email"
             placeholder="Email"
-            className="pl-1 mt-1 w-2/5 rounded-md border-gray-200 bg-white text-center text-lg text-gray-700 shadow-sm shadow-black outline-black	"
+            className="rounded-xl border-gray-900 border mb-2 w-full text-md"
           />
         </div>
         <div>
@@ -53,7 +53,7 @@ export function Signup() {
             name="password"
             type="password"
             placeholder="Password"
-            className="pl-1 mt-1 w-2/5 rounded-md border-gray-200 bg-white text-center text-lg text-gray-700 shadow-sm shadow-black outline-black	"
+            className="rounded-xl border-gray-900 border mb-2 w-full text-md"
           />
         </div>
         <div>
@@ -61,14 +61,11 @@ export function Signup() {
             name="password_confirmation"
             type="password"
             placeholder="Password confirmation"
-            className="pl-1 mt-1 w-2/5 rounded-md border-gray-200 bg-white text-center text-lg text-gray-700 shadow-sm shadow-black outline-black	"
+            className="rounded-xl border-gray-900 border mb-2 w-full text-md"
           />
         </div>
         <div>
-          <button
-            type="submit"
-            className="mx-auto ml-3 inline-block w-36 rounded-full bg-black px-5 py-3 text-base font-medium text-white "
-          >
+          <button type="submit" className="mx-auto mt-2 w-24 rounded-full bg-black font-medium text-white ">
             Signup
           </button>
         </div>
