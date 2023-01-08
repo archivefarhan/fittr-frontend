@@ -2,6 +2,18 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 export function Closet() {
+  const clearForm = (form) => {
+    let elements = form.elements;
+
+    for (var i = 0; i < elements.length; i++) {
+      elements[i].value = "";
+    }
+  };
+
+  const handleClearForm = () => {
+    clearForm(document.getElementById("createOutfit"));
+  };
+
   const [items, setItems] = useState([]);
   const [categories, setCategories] = useState([]);
   const [outfit, setOutfit] = useState([]);
@@ -62,11 +74,14 @@ export function Closet() {
           ))}
         </div>
         <br />
-        <form onSubmit={handleCreateOutfit}>
+        <form id="createOutfit" onSubmit={handleCreateOutfit}>
           <input type="text" name="name" className="mt-3 rounded-lg ml-5 w-1/2 text-center" placeholder="Outfit Name" />
           <br />
           <button className="rounded-full bg-black text-white w-1/5 mt-2">Save</button>
         </form>
+        <button className="rounded-full bg-black text-white w-1/5 mt-2" onClick={handleClearForm}>
+          Clear
+        </button>
       </div>
       <div className="overflow-scroll max-h-screen">
         <p className="mt-10 text-4xl font-black">Categories</p>

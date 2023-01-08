@@ -11,7 +11,7 @@ export function Header() {
 
         <div className="flex flex-1 items-center justify-end md:justify-between">
           <nav aria-label="Site Nav" className="hidden md:block">
-            <ul className="flex items-center gap-6 text-sm">
+            <ul className="flex items-center gap-6 text-md">
               <li>
                 <a className="text-black transition hover:text-gray-500/75" href="/about">
                   About
@@ -25,6 +25,12 @@ export function Header() {
               </li>
 
               <li>
+                <a className="text-black transition hover:text-gray-500/75" href="/items">
+                  Items
+                </a>
+              </li>
+
+              <li>
                 <a className="text-black transition hover:text-gray-500/75" href="/outfits">
                   Outfits
                 </a>
@@ -34,21 +40,22 @@ export function Header() {
 
           <div className="flex items-center gap-4">
             <div className="sm:flex sm:gap-4">
-              <a
-                className="block rounded-md bg-black px-5 py-2.5 text-sm font-medium text-white transition hover:bg-gray-500"
-                href="/login"
-              >
-                Login
-              </a>
+              <>
+                <a
+                  className="block rounded-md bg-black px-5 py-2.5 text-sm font-medium text-white transition hover:bg-gray-500"
+                  href="/login"
+                >
+                  Login
+                </a>
 
-              <a
-                className="block rounded-md bg-black px-5 py-2.5 text-sm font-medium text-white transition hover:bg-gray-500"
-                href="/signup"
-              >
-                Signup
-              </a>
-
-              <LogoutLink />
+                <a
+                  className="block rounded-md bg-black px-5 py-2.5 text-sm font-medium text-white transition hover:bg-gray-500"
+                  href="/signup"
+                >
+                  Signup
+                </a>
+                <LogoutLink />
+              </>
             </div>
           </div>
         </div>

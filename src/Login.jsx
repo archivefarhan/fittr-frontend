@@ -38,6 +38,7 @@ export function Login() {
       </ul>
       <form onSubmit={handleSubmit} className="h-1/2 flex flex-col items-center justify-center rounded">
         <h1 className="text-center mt-10 font-bold text-2xl">Login</h1>
+        <hr className="w-1/3 h-1 my-2 bg-black" />
         <br />
         <div>
           <input
@@ -55,7 +56,7 @@ export function Login() {
             className="mt-2 w-full rounded-xl border-black shadow-sm sm:text-sm"
           />
         </div>
-        <button type="submit" className="bg-black w-20 text-white rounded-full mt-4">
+        <button type="submit" className="bg-black w-20 px-4 py-2 text-white rounded-lg mt-4">
           Login
         </button>
       </form>

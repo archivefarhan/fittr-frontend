@@ -14,24 +14,25 @@ export function Outfit() {
   useEffect(handleIndexOutfits, []);
 
   return (
-    <div className="h-screen">
-      <div className="mt-5  text-center block text-4xl font-black">Outfits</div>
-      <div className="grid grid-row2 justify-center items-center">
-        <br />
-        <div className=" mt-5 block text-center">
+    <div className="grid grid-cols-1 h-screen w-screen">
+      <div className="mt-5 sm:auto-cols-auto text-center block text-4xl font-black">Outfits</div>
+      <div className="flex justify-center items-center">
+        <div className="mt-5 flex justify-between gap-10 text-center">
           {outfits.map((outfit) => (
-            <div key={outfit.id}>
-              <br />
-              <p>{outfit.name}</p>
-              <p>
-                {outfit.items.map((item) => (
-                  <div key={item.id}>
-                    <p>{item.name}</p>
-                    <img className="w-30 h-auto" src={item.img_url} />
-                    <p>{item.description}</p>
-                  </div>
-                ))}
-              </p>
+            <div key={outfit.id} className="">
+              <p className="text-xl font-bold mb-2">{outfit.name}</p>
+              <div className="block w-52 h-auto border-black border p-2 mb-5">
+                <p>
+                  {outfit.items.map((item) => (
+                    <div key={item.id} className="mt-1 mb-2">
+                      <p>{item.name}</p>
+                      <img src={item.img_url} />
+                    </div>
+                  ))}
+                </p>
+              </div>
+              <button className="rounded-md bg-black text-white w-20 mt-2 ml-2">Edit</button>
+              <button className="rounded-md bg-black text-white w-20 mt-2 ml-2">Delete</button>
             </div>
           ))}
         </div>
