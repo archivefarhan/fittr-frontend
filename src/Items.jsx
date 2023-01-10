@@ -32,36 +32,28 @@ export function Items() {
         </>
       ) : (
         <>
-          <Link to="/items/new" className="rounded-sm bg-black text-white w-full text-center mt-10">
-            Add Item
-          </Link>
+          <div className="rounded-xl text-lg bg-black text-white w-24 mx-auto text-center mt-10">
+            <Link to="/items/new">Add Item</Link>
+          </div>
           <br />
-          <div className="flex justify-between p-5">
-            <br />
+          <div className="grid grid-cols-6 auto-rows-auto mx-auto p-4 gap-5">
             {categories.map((category) => (
-              <div key={category.id} className="block">
-                <p className="text-2xl font-bold italic">{category.name}</p>
-                <br />
+              <div key={category.id}>
+                <p className="mt-5 mb-4 text-2xl font-bold italic">{category.name}</p>
                 {category.items.map((item) => (
-                  <div key={item.id} class="block">
-                    <br />
+                  <div key={item.id} class="inline-block h-auto w-auto mt-5">
                     <img
                       src={item.img_url}
-                      class="h-20 w-auto mx-auto items-center rounded-bl-3xl rounded-tr-3xl object-cover sm:h-72"
+                      class="h-auto w-60 mx-auto items-center rounded-bl-3xl rounded-tr-3xl object-cover sm:h-72"
                     />
                     <div class="mt-4 sm:flex sm:items-center sm:justify-center sm:gap-4">
                       <strong class="font-medium break-words">{item.name}</strong>
-
-                      <span class="hidden sm:block sm:h-px sm:w-8 sm:bg-black"></span>
-
-                      <p class="mt-0.5 opacity-50 sm:mt-0">{item.description}</p>
                     </div>
-                    <a href={`/items/${item.id}`} className="rounded-xl bg-black text-white w-auto text-center mt-10">
-                      Edit Item
-                    </a>
+                    <div className="rounded-xl bg-black text-white w-28 mx-auto text-center mt-5 mb-5">
+                      <a href={`/items/${item.id}`}>Edit Item</a>
+                    </div>
                   </div>
                 ))}
-                <br />
               </div>
             ))}
           </div>
