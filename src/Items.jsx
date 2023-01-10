@@ -45,6 +45,7 @@ export function Items() {
                     <img
                       src={item.img_url}
                       class="h-auto w-60 mx-auto items-center rounded-bl-3xl rounded-tr-3xl object-cover sm:h-72"
+                      title={item.description}
                     />
                     <div class="mt-4 sm:flex sm:items-center sm:justify-center sm:gap-4">
                       <strong class="font-medium break-words">{item.name}</strong>

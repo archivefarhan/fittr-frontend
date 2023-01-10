@@ -22,7 +22,7 @@ export function Outfit() {
   useEffect(handleIndexOutfits, []);
 
   return (
-    <div className="grid grid-cols-1 h-screen w-screen">
+    <div className="grid grid-cols-1 h-auto min-h-screen w-screen">
       <div className="mt-10 sm:auto-cols-auto text-center block text-4xl font-black">Outfits</div>
       {localStorage.jwt === undefined ? (
         <>
@@ -39,21 +39,23 @@ export function Outfit() {
                     <p>
                       {outfit.items.map((item) => (
                         <div key={item.id} className="mt-1 mb-2">
-                          <p>{item.name}</p>
                           <img src={item.img_url} />
+                          <p>{item.name}</p>
                         </div>
                       ))}
                     </p>
                   </div>
-                  <div className="rounded-md bg-black text-white w-20 mt-2 ml-2">
-                    <a href={`/outfits/${outfit.id}`}>Edit</a>
+                  <div className="grid grid-cols-2 grid-rows-1 place-items-center">
+                    <div className="rounded-md bg-black text-white w-20 mt-2 ml-2">
+                      <a href={`/outfits/${outfit.id}`}>Edit</a>
+                    </div>
+                    <button
+                      className="rounded-md bg-black text-white w-20 mt-2 "
+                      onClick={() => handleDestroyOutfit(outfit)}
+                    >
+                      Delete
+                    </button>
                   </div>
-                  <button
-                    className="rounded-md bg-black text-white w-20 mt-2 ml-2"
-                    onClick={() => handleDestroyOutfit(outfit)}
-                  >
-                    Delete
-                  </button>
                 </div>
               ))}
             </div>
