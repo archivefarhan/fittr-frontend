@@ -1,3 +1,4 @@
+import axios from "axios";
 import { LogoutLink } from "./LogoutLink";
 
 export function Header() {
@@ -6,7 +7,7 @@ export function Header() {
       <div className="mx-auto flex h-16 max-w-screen-xl items-center gap-8 px-4 sm:px-6 lg:px-8">
         <a className="block text-black" href="/">
           <span className="sr-only">Home</span>
-          <img src="capstone.svg" alt="" />
+          <img src="capstone.svg" className="h-10 w-auto" />
         </a>
 
         <div className="flex flex-1 items-center justify-end md:justify-between">
@@ -40,22 +41,28 @@ export function Header() {
 
           <div className="flex items-center gap-4">
             <div className="sm:flex sm:gap-4">
-              <>
-                <a
-                  className="block rounded-md bg-black px-5 py-2.5 text-sm font-medium text-white transition hover:bg-gray-500"
-                  href="/login"
-                >
-                  Login
-                </a>
+              {localStorage.jwt === undefined ? (
+                <>
+                  <a
+                    className="block rounded-md bg-black px-5 py-2.5 text-sm font-medium text-white transition hover:bg-gray-500"
+                    href="/login"
+                  >
+                    Login
+                  </a>
 
-                <a
-                  className="block rounded-md bg-black px-5 py-2.5 text-sm font-medium text-white transition hover:bg-gray-500"
-                  href="/signup"
-                >
-                  Signup
-                </a>
-                <LogoutLink />
-              </>
+                  <a
+                    className="block rounded-md bg-black px-5 py-2.5 text-sm font-medium text-white transition hover:bg-gray-500"
+                    href="/signup"
+                  >
+                    Signup
+                  </a>
+                </>
+              ) : (
+                <>
+                  <p className="block px-5 py-2.5 text-sm font-medium text-black">Welcome User!</p>
+                  <LogoutLink />
+                </>
+              )}
             </div>
           </div>
         </div>

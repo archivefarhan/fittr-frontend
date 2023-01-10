@@ -8,6 +8,7 @@ export function Closet() {
     for (var i = 0; i < elements.length; i++) {
       elements[i].value = "";
     }
+    setOutfit([]);
   };
 
   const handleClearForm = () => {
@@ -86,30 +87,38 @@ export function Closet() {
       <div className="overflow-scroll max-h-screen">
         <p className="mt-10 text-4xl font-black">Categories</p>
         <br />
-        {categories.map((category) => (
-          <div key={category.id} className="block">
-            <p className="text-2xl font-bold italic">{category.name}</p>
-            <br />
-            {category.items.map((item) => (
-              <div key={item.id} class="block" onClick={() => handleUpdateOutfit(item)}>
+        {localStorage.jwt === undefined ? (
+          <>
+            <p>Login to view closet</p>
+          </>
+        ) : (
+          <>
+            {categories.map((category) => (
+              <div key={category.id} className="block">
+                <p className="text-2xl font-bold italic">{category.name}</p>
                 <br />
-                <img
-                  src={item.img_url}
-                  class="h-56 w-auto mx-auto items-center rounded-bl-3xl rounded-tr-3xl object-cover sm:h-72"
-                />
-                <div class="mt-4 sm:flex sm:items-center sm:justify-center sm:gap-4">
-                  <strong class="font-medium">{item.name}</strong>
+                {category.items.map((item) => (
+                  <div key={item.id} class="block" onClick={() => handleUpdateOutfit(item)}>
+                    <br />
+                    <img
+                      src={item.img_url}
+                      class="h-56 w-auto mx-auto items-center rounded-bl-3xl rounded-tr-3xl object-cover sm:h-72"
+                    />
+                    <div class="mt-4 sm:flex sm:items-center sm:justify-center sm:gap-4">
+                      <strong class="font-medium">{item.name}</strong>
 
-                  <span class="hidden sm:block sm:h-px sm:w-8 sm:bg-black"></span>
+                      <span class="hidden sm:block sm:h-px sm:w-8 sm:bg-black"></span>
 
-                  <p class="mt-0.5 opacity-50 sm:mt-0">{item.description}</p>
-                  <br />
-                </div>
+                      <p class="mt-0.5 opacity-50 sm:mt-0">{item.description}</p>
+                      <br />
+                    </div>
+                  </div>
+                ))}
+                <br />
               </div>
             ))}
-            <br />
-          </div>
-        ))}
+          </>
+        )}
       </div>
     </div>
   );

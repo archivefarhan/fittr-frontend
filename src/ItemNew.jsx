@@ -47,7 +47,8 @@ export function ItemNew() {
 
   const handleCreateItem = (event) => {
     event.preventDefault();
-    const params = new FormData(event.target);
+    let params = new FormData(event.target);
+    params.append("category_id", categoryId);
     axios
       .post("http://localhost:3000/items.json", params)
       .then((response) => {

@@ -11,6 +11,7 @@ import { Outfit } from "./Outfit";
 import { Items } from "./Items";
 import { ItemShowPage } from "./ItemShowPage";
 import { ItemNew } from "./ItemNew";
+import { ItemUpdate } from "./ItemUpdate";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             <Route path="/items" element={<Items />} />
             <Route path="/items/:id" element={<ItemShowPage />} />
             <Route path="/items/new" element={<ItemNew />} />
+            <Route path="/items/:id/edit" element={<ItemUpdate />} />
           </Routes>
         </div>
         <Footer />

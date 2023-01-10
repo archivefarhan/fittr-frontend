@@ -15,7 +15,7 @@ export function ItemShowPage() {
 
   const handleDestoryItem = () => {
     axios.delete(`http://localhost:3000/items/${params.id}.json`).then((response) => {
-      setItem(item.filter((i) => i.id !== item.id));
+      window.location.href = "/items";
     });
   };
 
@@ -28,8 +28,12 @@ export function ItemShowPage() {
         <img src={item.img_url} className="w-auto h-32" />
         <p>{item.description}</p>
       </div>
-      <button className="rounded md bg-black text-white">Update Item</button>
-      <button onClick={handleDestoryItem}>Delete Item</button>
+      <a href={`/items/${item.id}/edit`} className="rounded md bg-black text-white">
+        Update Item
+      </a>
+      <button className="rounded md bg-black text-white" onClick={handleDestoryItem}>
+        Delete Item
+      </button>
     </div>
   );
 }
