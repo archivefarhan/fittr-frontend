@@ -138,10 +138,6 @@ export function Closet() {
                     />
                     <div class="mt-4 sm:flex sm:items-center sm:justify-center sm:gap-4">
                       <strong class="font-medium">{item.name}</strong>
-
-                      <span class="hidden sm:block sm:h-px sm:w-8 sm:bg-black"></span>
-
-                      <p class="mt-0.5 opacity-50 sm:mt-0">{item.description}</p>
                       <br />
                     </div>
                   </div>

@@ -16,6 +16,8 @@ export function ItemUpdate() {
   const handleUpdateItem = (id, params, successCallback) => {
     console.log("handleUpdateItem", params);
     axios.patch(`http://localhost:3000/items/${id}.json`, params).then((response) => {
+      console.log(id);
+      console.log(response);
       window.location.href = "/items";
       successCallback();
     });
@@ -64,6 +66,9 @@ export function ItemUpdate() {
         >
           Update Item
         </button>
+        <div className="mt-2 p-1 rounded-full text-center text-white bg-black w-28">
+          <a href="/items">Back</a>
+        </div>
       </form>
     </div>
   );
