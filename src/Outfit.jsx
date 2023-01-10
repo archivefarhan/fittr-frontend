@@ -23,7 +23,7 @@ export function Outfit() {
 
   return (
     <div className="grid grid-cols-1 h-screen w-screen">
-      <div className="mt-5 sm:auto-cols-auto text-center block text-4xl font-black">Outfits</div>
+      <div className="mt-10 sm:auto-cols-auto text-center block text-4xl font-black">Outfits</div>
       {localStorage.jwt === undefined ? (
         <>
           <p className="mt-3 text-xl text-center">Login to view items</p>
