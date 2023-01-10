@@ -1,4 +1,3 @@
-import axios from "axios";
 import { LogoutLink } from "./LogoutLink";
 
 export function Header() {

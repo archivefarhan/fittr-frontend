@@ -28,7 +28,6 @@ export function ItemUpdate() {
       <div className="grid grid-cols-1 place-items-center mx-auto">
         <p className="mb-2 font-black text-2xl">{item.name}</p>
         <img src={item.img_url} className="w-auto h-96" />
-        <p>{item.description}</p>
       </div>
       <form className="grid grid-cols-1 place-items-center mt-5">
         <div>

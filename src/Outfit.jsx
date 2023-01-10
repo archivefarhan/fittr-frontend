@@ -45,7 +45,9 @@ export function Outfit() {
                       ))}
                     </p>
                   </div>
-                  <button className="rounded-md bg-black text-white w-20 mt-2 ml-2">Edit</button>
+                  <div className="rounded-md bg-black text-white w-20 mt-2 ml-2">
+                    <a href={`/outfits/${outfit.id}`}>Edit</a>
+                  </div>
                   <button
                     className="rounded-md bg-black text-white w-20 mt-2 ml-2"
                     onClick={() => handleDestroyOutfit(outfit)}

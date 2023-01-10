@@ -23,17 +23,19 @@ export function ItemShowPage() {
 
   return (
     <div className="h-screen w-screen">
-      <div className="grid grid-cols-1 justify-center">
-        <p className="text-xl font-bold">{item.name}</p>
-        <img src={item.img_url} className="w-auto h-32" />
-        <p>{item.description}</p>
+      <div className="grid grid-cols-1 mx-auto place-items-center">
+        <p className="mt-10 text-2xl mb-4 font-black">{item.name}</p>
+        <img src={item.img_url} className="w-auto h-96 mb-3" />
+
+        <div className="grid grid-rows-1 gap-2 mt-2">
+          <a href={`/items/${item.id}/edit`} className="rounded-md w-32 text-center bg-black text-white">
+            Update Item
+          </a>
+          <button className="rounded-md w-32 text-center bg-black text-white" onClick={handleDestoryItem}>
+            Delete Item
+          </button>
+        </div>
       </div>
-      <a href={`/items/${item.id}/edit`} className="rounded md bg-black text-white">
-        Update Item
-      </a>
-      <button className="rounded md bg-black text-white" onClick={handleDestoryItem}>
-        Delete Item
-      </button>
     </div>
   );
 }
