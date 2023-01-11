@@ -13,10 +13,10 @@ export function ItemUpdate() {
     });
   };
 
-  const handleUpdateItem = (id, params, successCallback) => {
-    console.log("handleUpdateItem", params);
-    axios.patch(`http://localhost:3000/items/${id}.json`, params).then((response) => {
-      console.log(id);
+  const handleUpdateItem = (event, successCallback) => {
+    event.preventDefault();
+    let formParams = new FormData(event.target);
+    axios.patch(`http://localhost:3000/items/${params.id}.json`, formParams).then((response) => {
       console.log(response);
       window.location.href = "/items";
       successCallback();
@@ -27,11 +27,11 @@ export function ItemUpdate() {
 
   return (
     <div className="w-screen h-auto min-h-screen">
-      <div className="grid grid-cols-1 place-items-center mx-auto">
-        <p className="mb-2 font-black text-2xl">{item.name}</p>
+      <div className="mt-5 grid grid-cols-1 place-items-center mx-auto">
+        <p className="mb-2 mt-2 font-black text-2xl">{item.name}</p>
         <img src={item.img_url} className="w-auto h-96" />
       </div>
-      <form className="grid grid-cols-1 place-items-center mt-5">
+      <form className="grid grid-cols-1 place-items-center mt-5" onSubmit={handleUpdateItem}>
         <div>
           <input
             defaultValue={item.name}
@@ -59,17 +59,13 @@ export function ItemUpdate() {
             className="w-96 rounded-xl border border-black mb-2"
           />
         </div>
-        <button
-          onClick={handleUpdateItem}
-          type="submit"
-          className="mt-2 p-1 rounded-full text-center text-white bg-black w-28 "
-        >
+        <button type="submit" className="mt-2 p-1 rounded-full text-center text-white bg-black w-28 ">
           Update Item
         </button>
-        <div className="mt-2 p-1 rounded-full text-center text-white bg-black w-28">
-          <a href="/items">Back</a>
-        </div>
       </form>
+      <div className="mt-2 p-1 rounded-full text-center mx-auto text-white bg-black w-28">
+        <a href="/items">Back</a>
+      </div>
     </div>
   );
 }
